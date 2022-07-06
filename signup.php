@@ -27,17 +27,18 @@ require('config.php')
             <div class="login-area">
                 <div class="box-login">
                     <div class="text-to-form">
-                        Acesse sua conta:
+                        Crie sua conta:
                     </div>
                     <div class="form-area">
                             <form action="" method="POST" id="form">
+                            <input type="text" name="nome" placeholder="Digite seu nome">
                                 <input type="email" name="email" placeholder="Digite seu email">
                                 <input type="password" name="password" placeholder="Digite sua senha">
                             </form>
                     </div>
                     <hr class="division-login-box"/>
                     <div class="sign-up-text">
-                        Ainda não tem conta? <a href="">Crie sua conta</a>
+                        Já tem uma conta? <a href="">Faça login</a>
                     </div>
                     </div>
                     
