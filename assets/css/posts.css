@@ -1,0 +1,128 @@
+.posts-area {
+    display:flex;
+    flex-direction: column;
+    font-size: 1.0rem;
+
+
+    width: 50%;
+    height: 100%;
+    border-top: 1px solid #edede9;
+    border-right: 1px solid #edede9;
+    border-left: 1px solid #edede9;
+    padding: 5px 5px 0px 5px;
+}
+
+.posts-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.post {
+    display: flex;
+    width: 100%;
+    font-family:'Poppins';
+    flex-direction: column;
+    border-bottom: 1px solid #edede9;
+   
+}
+
+@media (max-width:800px) {
+     .posts-container {
+        flex-direction: column;
+        align-items: center;
+     }
+     .name-user, .posts-area {
+        margin-bottom: 30px;
+     }
+}
+
+
+.body-post { 
+    margin-left: 70px;
+    margin-bottom: 15px;
+}
+
+.infos-post {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    display: flex;
+    align-items:center;
+}
+
+.infos-post .name-user-comment{
+    margin-left: 8px;
+}
+
+.circle-comment {
+    display:block;
+
+	border: 2px solid #3a86ff;
+	border-radius: 50%;
+	height: 39px;
+	width: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-user-photo img {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+}
+
+.comment-user-photo {
+    background-size: cover;
+	background-position: top center;
+    margin: 0 auto;
+    width: 38px;
+    height: 38px;
+}
+
+/*Área de postagem*/
+.insert-comment-container {
+ text-align: center;
+}
+
+.insert-comment-container textarea {
+    margin-top: 50px;
+    width: 50%;
+    height: 3rem;
+    border: 2px solid #000;
+    resize: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Roboto';
+}
+
+.insert-comment-container textarea:focus {
+    border: 2px solid red;
+}
+
+.fa-solid {
+    color:red;
+    cursor: pointer;
+}
+
+.fa-heart {
+    cursor: pointer;
+}
+
+.fa-bell { 
+    color: #000;
+}
+.reactions-post {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20%;
+}
+
+.reactions-post .date-sended {
+    opacity: 40%;
+    font-size: 0.8rem;
+}
+
