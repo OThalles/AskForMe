@@ -35,7 +35,9 @@
      }
      .name-user, .posts-area {
         margin-bottom: 30px;
+        width: 100%;
      }
+
 }
 
 
@@ -60,8 +62,8 @@
 
 	border: 2px solid #3a86ff;
 	border-radius: 50%;
-	height: 39px;
-	width: 39px;
+	height: 38px;
+	width: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,8 +71,8 @@
 
 .comment-user-photo img {
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
+    width: 37px;
+    height: 37px;
 }
 
 .comment-user-photo {
@@ -119,10 +121,39 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 20%;
+
 }
 
 .reactions-post .date-sended {
     opacity: 40%;
     font-size: 0.8rem;
+}
+
+/*Resposta da pergunta */
+
+#body{
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 100%;
+
+}
+
+#form-aswner {
+    padding: 10px;
+    width: 80%;
+
+}
+
+.author-comment-box {
+    display: flex;
+    width: 100%;
+    background-color: #8ecae6;
+    align-items:center;
+}
+
+.loggeduser-photo-comment {
+    margin-right: 10px;
 }
 

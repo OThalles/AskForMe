@@ -22,6 +22,22 @@
             <i class="fa-regular fa-heart"></i><span class="count-likes"> 0 </span>
             </div>
         </div>
+        <div class="author-comment-box">
+            
+            <span class="circle-comment">
+                <div class="comment-user-photo">
+                    
+                    <a href=""><img src="<?=$base?>/media/profile/default.png" alt=""></a>
+                </div>
+            </span>
+            
+            <form id="form-aswner" action="">
+            
+            <input type="text" id="body">
+        
+            </form>
+
+        </div>
     </div>
     <div class="post">
         <div class="infos-post">
@@ -44,8 +60,23 @@
             <i class="fa-regular fa-heart"></i><span class="count-likes"> 0 </span>
             </div>
         </div>
-    </div>
+        <div class="author-comment-box">
+            
+            <span class="circle-comment">
+                <div class="comment-user-photo">
+                    
+                    <a href=""><img src="<?=$base?>/media/profile/default.png" alt=""></a>
+                </div>
+            </span>
+            
+            <form id="form-aswner" action="">
+            
+            <input type="text" id="body">
+        
+            </form>
 
+        </div>
+    </div>
     
     
     

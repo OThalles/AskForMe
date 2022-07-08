@@ -1,6 +1,5 @@
 <?php
-require_once('../config.php');
-require_once('../models/User.php');
+require_once('models/User.php');
 
 
 class UserDao implements UserInterface {
@@ -10,17 +9,40 @@ class UserDao implements UserInterface {
         $this->pdo = $driver;
     }
 
-    public function formulateUser($data) {
+    private function formulateUser($data) {
         $user = new User();
         $user->id = $data['id'];
         $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = $data['password'];
         $user->birthdate = $data['birthdate'];
         $user->photo = $data['photo'];
         $user->city = $data['description'];
         $user->lastconnection = $data['lastconnection'];
+        $user->token = $data['token'];
 
         return $user;
 
+    }
+
+    public function findByEmail($email) {
+        $sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $sql->bindValue(':email', $email);
+        if($sql->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function insert(User $user) {
+        $sql = $this->pdo->prepare("INSERT INTO users(name,email,password,birthdate,token) VALUES (:name, :email, :password, :birthdate,:token)");
+        $sql->bindValue(':name', $user->name);
+        $sql->bindValue(':email', $user->email);
+        $sql->bindValue(':password', $user->password);
+        $sql->bindValue(':birthdate', $user->birthdate);
+        $sql->bindValue(':token', $user->token);
+        $sql->execute();
     }
 
     public function getUserById($id) {
