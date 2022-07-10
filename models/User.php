@@ -14,7 +14,6 @@ class User {
 }
 
 interface UserInterface {
-    public function formulateUser(User $user);
     public function getUserById($id);
     public function findByEmail($email);
     public function insert(User $user);

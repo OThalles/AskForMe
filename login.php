@@ -1,5 +1,6 @@
 <?php 
-require('config.php')
+require('config.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,15 +30,20 @@ require('config.php')
                     <div class="text-to-form">
                         Acesse sua conta:
                     </div>
+                    <?php if(isset($_SESSION['flash'])): ?>
+                            <div><?=$_SESSION['flash']?></div>
+                        <?php unset($_SESSION['flash'])?>
+                        <?php endif; ?>
                     <div class="form-area">
-                            <form action="" method="POST" id="form">
+                            <form action="<?=$base?>/login_action.php" method="POST" id="form">
                                 <input type="email" name="email" placeholder="Digite seu email">
                                 <input type="password" name="password" placeholder="Digite sua senha">
+                                <input type="submit">
                             </form>
                     </div>
                     <hr class="division-login-box"/>
                     <div class="sign-up-text">
-                        Ainda não tem conta? <a href="">Crie sua conta</a>
+                        Ainda não tem conta? <a href="<?=$base?>/signup.php">Crie sua conta</a>
                     </div>
                     </div>
                     

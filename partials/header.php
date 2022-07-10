@@ -1,8 +1,9 @@
 
     <div class="logged-user-area">
+        <a href="<?=$base?>/logout.php">Sair</a>
         <i class="fa-regular fa-bell"></i>
         <div class="logged-user-name">
-            Thalles Henrique Ramos
+            <?=$userMe->name?>
         </div>
 
         <span class="circle">

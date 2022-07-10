@@ -28,12 +28,36 @@ class UserDao implements UserInterface {
     public function findByEmail($email) {
         $sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
         $sql->bindValue(':email', $email);
+        $sql->execute();
         if($sql->rowCount() > 0) {
-            return true;
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
+            $user = $this->formulateUser($data);
+            return $user;
+        } 
+        return false;
+    }
+
+    public function findByToken($token) {
+        $sql = $this->pdo->prepare("SELECT * FROM users WHERE token = :token");
+        $sql->bindValue(':token', $token);
+        $sql->execute();
+        if($sql->rowCount() > 0) {
+            $data = $sql->fetch(PDO::FETCH_ASSOC);
+            $user = $this->formulateUser($data);
+            return $user;
         } else {
             return false;
         }
     }
+
+    public function updateTokenByEmail($token, $email) {
+        $sql = $this->pdo->prepare("UPDATE users SET token = :token WHERE email = :email");
+        $sql->bindValue(':token', $token);
+        $sql->bindValue(':email', $email);
+        $sql->execute();
+
+    }
+
 
     public function insert(User $user) {
         $sql = $this->pdo->prepare("INSERT INTO users(name,email,password,birthdate,token) VALUES (:name, :email, :password, :birthdate,:token)");
@@ -48,11 +72,12 @@ class UserDao implements UserInterface {
     public function getUserById($id) {
         if(!empty($id)) {
             $sql = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
-            $sql->bindValue(':id');
-            }
+            $sql->bindValue(':id', $id);
+            $sql->execute();
+        }
         if($sql->rowCount() > 0) {
             $data = $sql->fetch(PDO::FETCH_ASSOC);
-            $newUser = formulateUser($data);
+            $newUser = $this->formulateUser($data);
             return $newUser;
         }
     }

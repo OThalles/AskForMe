@@ -3,6 +3,6 @@
         <img src="<?=$base?>/media/profile/default.png" alt="teste">
     </div>
     <div class="name-user">
-        <span>Thalles Henrique Ramos Marcelino</span>
+        <span><?=$user->name?></span>
     </div>
 </div>

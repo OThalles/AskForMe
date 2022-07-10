@@ -13,6 +13,36 @@ class Auth {
         $this->dao = new UserDao($this->pdo);
     }
 
+    public function checkToken() {
+        if(!empty($_SESSION['token'])) {
+            $token = $_SESSION['token'];
+            $user = $this->dao->findByToken($token);
+            if($user) {
+                return $user;
+            } else {
+                return false;
+            }
+
+        }
+        header("Location: ".$base."/login.php");
+        exit;
+    }
+
+    public function validateLogin($email, $password) {
+        $user = $this->dao->findByEmail($email);
+        if($user) {
+            $hash = password_verify($password, $user->password);
+            if($hash) {
+                $token = md5(time().rand(0,9999));
+                $_SESSION['token'] = $token;
+                $this->dao->updateTokenByEmail($token, $email);
+                return true;
+            }
+
+        }
+        return false;
+        
+    }
 
 
     public function EmailExists($email) {

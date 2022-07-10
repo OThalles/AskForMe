@@ -28,7 +28,8 @@ if($name && $email && $password && $birthdate) {
 
      if($auth->EmailExists($email)===false) {
         $auth->registerUser($name, $email, $password, $birthdate);
-        header("Location: signup.php");
+        $_SESSION['flash'] = 'Sua conta foi criada, pode fazer login';
+        header("Location: login.php");
      } else {
         $_SESSION['flash'] = "Esse e-mail já existe";
         header("Location: signup.php");
