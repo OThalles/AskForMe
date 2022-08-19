@@ -1,4 +1,4 @@
-CREATE TABLE test.users(
+CREATE TABLE askforme.users(
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     email VARCHAR(150) NOT NULL,
