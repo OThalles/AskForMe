@@ -1,7 +1,7 @@
 .box-header {
     font-size: 1.5rem;
     display:flex;
-    justify-content:flex-end;
+    justify-content:space-between;
     align-items:center;
     color:red;
     width: 100%;
@@ -9,6 +9,22 @@
     background-color: #3a86ff;
     box-shadow: 1px 1px 1px black;
 }
+
+.gear-icon {
+    width: 25px;
+    height: 25px; 
+    margin-top: 5px;
+
+}
+
+.option-logout-header {
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+
 
 .logged-user-photo img{
     width: 100%;
@@ -27,16 +43,14 @@
     height: 38px;
 }
 
-.logged-user-name {
+.logged-user-name a {
+    text-decoration: none;
     font-size: 1rem;
-    margin-right: 15px;
+    margin-right: 10px;
     margin-left: 20px;
     color: #fff;
 }
 
-.box-header span {
-    margin-right: 10px;
-}
 
 .circle {
     display:block;
@@ -58,3 +72,112 @@
     justify-content:center;
     align-items: center;
 }
+
+.notifications-box {
+    display: flex;
+
+}
+
+.popup-notifications {
+    background-color: #fff;
+    display: none;
+    border: 1px solid #edede9;
+    border-radius: 4px;
+    height: 50vh;
+    width: 300px;
+    position: absolute;
+    right: 10px;
+    top: 61px;
+
+    overflow-y: auto;
+
+}
+
+.notification {
+    font-family:'Poppins';
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid #edede9;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.division {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    
+}
+
+.division span {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 5px; 
+}
+
+
+
+
+.notification-user-photo img {
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    
+}
+
+.notification-user-photo {
+
+    align-items: center;
+    background-size: cover;
+	background-position: top center;
+    margin: 0 auto;
+    margin-bottom: -10px;
+    width: 38px;
+    height: 38px;
+}
+
+
+/*Search area*/
+#search {
+    align-items: center;
+    flex: 1;
+    width: 30vw;
+    margin-left:15px;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'Roboto';
+    outline: 0;
+    box-shadow:-1px 1px 5px -1px rgba(0, 0, 0, 0.5);
+    color: #000;
+    border-bottom: 2px solid #fff;;
+
+}
+
+::placeholder{
+    font-size: 15px;
+}
+
+.submit-lente {
+    position:absolute;
+    top:0; right:0;
+    z-index:10;
+    border:none;
+    background:transparent;
+    outline:none;
+    line-height: 3.5;
+    opacity: 0.7;
+    width: 40px;
+
+  }
+
+  .search-user {
+    position: relative;
+  }
+  
+  .search-user input {
+    width: 10%;
+  }
+
+

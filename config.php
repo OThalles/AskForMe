@@ -2,7 +2,7 @@
 session_start();
 $base = 'http://localhost';
 
-$db_name = 'elogie-t';
+$db_name = 'askforme';
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pass = '';

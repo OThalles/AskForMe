@@ -5,9 +5,12 @@
     margin: 0;
     padding: 0;
     border: 0;
+    text-decoration: none;
 }
 
+
 body {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -17,13 +20,46 @@ body {
 }
 
 .design-logo-area {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     display: flex;
     width: 35%;
     height: 100vh;
     background-color: #3a86ff;
 }
 
+@keyframes pisca{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+.phrase-keyboard-machine {
+    color: #fff;
+    text-align: center;
+
+}
+.phrase-keyboard-machine:after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .7s infinite;
+
+}
+
+
+@media (max-width: 850px) {
+    .phrase-keyboard-machine {
+        display: none;
+    }
+}
+
 .container-login {
+    height: 100vh;
     display:flex;
     justify-content: stretch;
 }
@@ -35,6 +71,10 @@ body {
     align-items: center;
     flex-direction: column;
 
+}
+
+.warning {
+    font-size: 15px;
 }
 
 #form {
@@ -110,7 +150,10 @@ body {
         height: 80vh;
         text-align: center;
     }
+
 }
+
+
 
 /*Recommended-users area*/
 
@@ -121,9 +164,14 @@ body {
     justify-content: center;
     
 }
+.container {
+    display: flex;
+    flex-direction: column;
+}
 
 .recommended-users-box {
-    border: 1px solid #edede9;
+    border: 1px solid #adb5bd;
+    box-shadow:-1px 1px 5px -1px rgba(0, 0, 0, 0.5);
     border-radius: 4px;
     width: 40vh;
     height: 25vh;
@@ -183,6 +231,13 @@ body {
     width: 25%;
 }
 
+.description{
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0.7;
+    font-size: 15px;
+}
+
 .photo img {
     border-radius: 50%;
     width: 4em;
@@ -207,5 +262,200 @@ body {
     color: white;
     padding: 10px;
     text-align:center;
+}
+
+
+/* Configurações */
+
+.warning-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    background-color: #e63946;
+}
+
+.config-box {
+    display: flex;
+    font-size: 15px;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 25px;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.config-box span {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.infos-user {
+    display: flex;
+    justify-content: center;    
+    margin-top: 25px;
+    width: 20%;
+}
+
+.change-photo-button {
+    cursor:pointer;
+    text-align: center;
+    border: 2px solid #3a86ff;
+    border-radius: 4px;
+    width: 150px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Roboto';
+}
+
+.change-photo-button:hover {
+    background-color: #3a86ff;
+    color: white;
+}
+
+
+.form-config input {
+    margin-top: 5px;
+    margin-bottom:20px;
+    width: 80%;
+    border-bottom: 2px solid rgb(200,200,200);
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.form-config input:focus, .form-config input:valid {
+    border-bottom: 2px solid cornflowerblue;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+
+.config-menu-container {
+
+    margin-top: 50px;
+    font-size: 15px;
+    display: flex;
+
+}
+
+.config-menu-container ul li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.credentials-infos {
+    display: none;
+}
+
+#info-menu {
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #3a86ff;
+
+}
+
+#cred-menu {
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+#info-menu, #cred-menu{
+    cursor: pointer;
+    font-family: 'Roboto';
+}
+
+#upload-photo {
+    position: absolute;
+    left: -500px;
+    top: -500px;
+}
+
+#saveinfos {
+    cursor:pointer;
+    text-align: center;
+    border: 2px solid #3a86ff;
+    border-radius: 4px;
+    width: 150px;
+    padding: 6px;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+#saveinfos:hover {
+    background-color: #3a86ff;
+    color: #fff;
+}
+
+.submitinput {
+    display: none;
+}
+
+.save-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.config-box {
+    font-family: 'Roboto';
+}
+
+
+/* Search Page */
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.users_found {
+    display: flex;
+    
+
+
+    flex-wrap:wrap;
+    max-width: 100%;
+    min-width: 50%;
+    flex-direction: column;
+    align-items:center;
+    background-color: #fff;
+    height: 500px;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    width: 10%;
+    flex-direction: center;
+
+}
+
+
+.photo-finded-user img {
+    border-radius: 50%;
+    width: 0.8em;
+    height: 0.8em;
+}
+
+.user-finded-name {
+    display:flex;
+    margin-top: -7px;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto';
+}
+.user-finded-name  a {
+    text-decoration: none;
+    color: #000;
 }
 

@@ -7,10 +7,11 @@ $userMe = $auth->checkToken();
 
 
 $id = filter_input(INPUT_GET, 'id');
-$body = filter_input(INPUT_POST, 'body');
+$body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_SPECIAL_CHARS);
+$maxCharacters = 500;
 
 if($id && $body) {
-    if(!empty($id) && !empty($body)) {
+    if(!empty($id) && !empty($body) && strlen($body) < $maxCharacters) {
         $postDao = new Post();
         $postDao->user_to = $id;
         $postDao->user_from = $userMe->id;
@@ -19,8 +20,12 @@ if($id && $body) {
         $newPost = new postDao($pdo);
         $newPost->sendPostToUser($postDao);
         header("Location: ".$base."/perfil.php?id=".$id);
+        exit;
     }
 }
+
+header("Location: ".$base."/perfil.php?id=".$id);
+exit;
 
 
 

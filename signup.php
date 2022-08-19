@@ -22,14 +22,15 @@ require('config.php')
     </header>
     <div class="container-login">
             <div class="design-logo-area">
-
+            <h2 class="title">AskForMe!</h2>
+                <h2 class="phrase-keyboard-machine" id="keyboard">Faça e responda perguntas!</h2>
             </div>
             <div class="login-area">
                 <div class="box-login">
                     <div class="text-to-form">
                         Crie sua conta:
                         <?php if(isset($_SESSION['flash'])): ?>
-                            <div><?=$_SESSION['flash']?></div>
+                            <div class="warning"><?=$_SESSION['flash']?></div>
                         <?php unset($_SESSION['flash'])?>
                         <?php endif; ?>
                     </div>
@@ -39,12 +40,12 @@ require('config.php')
                                 <input type="text" name="birthdate" id="birthdate" placeholder="Digite sua data de nascimento">
                                 <input type="email" name="email" placeholder="Digite seu email">
                                 <input type="password" name="password" placeholder="Digite sua senha">
-                                <input type="submit" value="ENVIAR">
+                                <input type="submit" value="Cadastrar-se">
                             </form>
                     </div>
                     <hr class="division-login-box"/>
                     <div class="sign-up-text">
-                        Já tem uma conta? <a href="">Faça login</a>
+                        Já tem uma conta? <a href="<?=$base?>/login.php">Faça login</a>
                     </div>
                     </div>
                     
@@ -63,5 +64,6 @@ require('config.php')
             );
 
     </script>
+<script src="<?=$base?>/assets/js/keyboardmachine.js"></script>
 </body>
 </html>
