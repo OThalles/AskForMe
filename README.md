@@ -1,8 +1,8 @@
-#AskForMe
+AskForMe
 ---
 Eu criei esse projeto para treinar minhas habilidades com Web(PHP, JS) e com design responsivo.  
 ---
-###Caso queira utilizá-lo:    
+Caso queira utilizá-lo:    
 
 Com o git instalado, utilize o seguinte comando:    
 git clone https://github.com/OThalles/AskForMe  
